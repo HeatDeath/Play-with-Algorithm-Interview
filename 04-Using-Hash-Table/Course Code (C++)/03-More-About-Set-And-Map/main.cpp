@@ -3,7 +3,10 @@
 #include <unordered_set>
 using namespace std;
 
-/// 349. Intersection of Two Arrays
+// 349. Intersection of Two Arrays
+// https://leetcode.com/problems/intersection-of-two-arrays/description/
+// 时间复杂度: O(len(nums1)+len(nums2))
+// 空间复杂度: O(len(nums1))
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
@@ -11,9 +14,9 @@ public:
         unordered_set<int> record(nums1.begin(), nums1.end());
 
         unordered_set<int> resultSet;
-        for( int i = 0 ; i < nums2.size() ; i ++ )
-            if( record.find( nums2[i] ) != record.end() )
-                resultSet.insert( nums2[i] );
+        for(int i = 0; i < nums2.size(); i ++ )
+            if(record.find(nums2[i]) != record.end())
+                resultSet.insert(nums2[i]);
 
         return vector<int>(resultSet.begin(), resultSet.end());
     }
@@ -29,8 +32,8 @@ int main() {
 
     vector<int> res = Solution().intersection(vec1, vec2);
     for(int i = 0 ; i < res.size() ; i ++ )
-        cout<<res[i]<<" ";
-    cout<<endl;
+        cout << res[i] << " ";
+    cout << endl;
 
     return 0;
 }

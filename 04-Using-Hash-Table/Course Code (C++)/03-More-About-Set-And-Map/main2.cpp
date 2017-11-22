@@ -3,7 +3,10 @@
 #include <unordered_map>
 using namespace std;
 
-/// 350. Intersection of Two Arrays II
+// 350. Intersection of Two Arrays II
+// https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+// 时间复杂度: O(len(nums1)+len(nums2))
+// 空间复杂度: O(len(nums1))
 class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
@@ -13,9 +16,9 @@ public:
             record[nums1[i]] += 1;
 
         vector<int> resultVector;
-        for( int i = 0 ; i < nums2.size() ; i ++ )
-            if( record[ nums2[i] ] > 0 ){
-                resultVector.push_back( nums2[i] );
+        for(int i = 0; i < nums2.size(); i ++)
+            if(record[ nums2[i] ] > 0){
+                resultVector.push_back(nums2[i]);
                 record[nums2[i]] --;
             }
 
@@ -32,9 +35,9 @@ int main() {
     vector<int> vec2(nums2, nums2 + sizeof(nums2)/sizeof(int));
 
     vector<int> res = Solution().intersect(vec1, vec2);
-    for(int i = 0 ; i < res.size() ; i ++ )
-        cout<<res[i]<<" ";
-    cout<<endl;
+    for(int i = 0; i < res.size(); i ++)
+        cout << res[i] << " ";
+    cout << endl;
 
     return 0;
 }

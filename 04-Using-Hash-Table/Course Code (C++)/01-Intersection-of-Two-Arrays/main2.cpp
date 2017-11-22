@@ -3,7 +3,10 @@
 #include <set>
 using namespace std;
 
-/// 349. Intersection of Two Arrays
+// 349. Intersection of Two Arrays
+// https://leetcode.com/problems/intersection-of-two-arrays/description/
+// 时间复杂度: O(nlogn)
+// 空间复杂度: O(n)
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
@@ -12,7 +15,7 @@ public:
 
         set<int> resultSet;
         for( int i = 0 ; i < nums2.size() ; i ++ )
-            if( record.find( nums2[i] ) != record.end() )
+            if( record.find(nums2[i]) != record.end() )
                 resultSet.insert( nums2[i] );
 
         return vector<int>(resultSet.begin(), resultSet.end());
